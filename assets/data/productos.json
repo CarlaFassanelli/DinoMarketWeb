@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "Leche Entera",
+        "img": "img/leche_entera.jpg",
+        "descripcion": "Leche de vaca fresca y pasteurizada, envase de 1 litro.",
+        "precio": 1.55,
+        "stock": 120,
+        "categoria": "Lácteos"
+    },
+    {
+        "id": 2,
+        "nombre": "Pan de Molde Integral",
+        "img": "./assets/img/pan-integral.png",
+        "descripcion": "Pan rebanado 100% integral, alto en fibra. Paquete de 450g.",
+        "precio": 2.10,
+        "stock": 85,
+        "categoria": "Panadería y Bollería"
+    },
+    {
+        "id": 3,
+        "nombre": "Manzanas Rojas",
+        "img": "img/manzanas_rojas.jpg",
+        "descripcion": "Manzanas frescas, crujientes y dulces. El kilo.",
+        "precio": 2.99,
+        "stock": 60,
+        "categoria": "Frutas y Verduras"
+    },
+    {
+        "id": 4,
+        "nombre": "Aceite de Oliva Extra Virgen",
+        "img": "img/aceite_oliva.jpg",
+        "descripcion": "Aceite de oliva de primera prensa en frío. Botella de 750ml.",
+        "precio": 8.75,
+        "stock": 40,
+        "categoria": "Despensa y Aceites"
+    },
+    {
+        "id": 5,
+        "nombre": "Pasta Spaghetti",
+        "img": "img/pasta_spaghetti.jpg",
+        "descripcion": "Pasta de sémola de trigo duro. Paquete de 500g.",
+        "precio": 0.95,
+        "stock": 200,
+        "categoria": "Despensa y Pastas"
+    },
+    {
+        "id": 6,
+        "nombre": "Detergente Líquido Ropa",
+        "img": "img/detergente_liquido.jpg",
+        "descripcion": "Detergente concentrado para lavadora, aroma floral. Envase de 2L (40 lavados).",
+        "precio": 5.49,
+        "stock": 55,
+        "categoria": "Hogar y Limpieza"
+    }
+]

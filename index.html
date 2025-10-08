@@ -31,34 +31,54 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#categorías">Categorías</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#productos">Productos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
 
-            <!-- Carrito -->
-            <div class="cart-container">
-                <button class="cart-btn" aria-label="Ver carrito">
-                    <img src="assets/img/carritos.png" alt="Carrito de compras">
-                </button>
-                <div id="carrito" class="cart-dropdown">
-                    <table id="lista-carrito" class="cart-table">
-                        <thead>
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th>Eliminar</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
-                </div>
-            </div>
+           <!-- Carrito -->
+<div class="cart-container">
+    <button class="cart-btn" id="abrir-carrito" aria-label="Ver carrito">
+        <img src="assets/img/carritos.png" alt="Carrito de compras">
+    </button>
+</div>
+
+<!-- PANEL LATERAL DEL CARRITO -->
+<aside id="panel-carrito" class="cart-panel">
+    <div class="cart-panel-header">
+        <h2>Tu carrito 🛒</h2>
+        <button id="cerrar-carrito" class="cerrar-carrito">✖</button>
+    </div>
+
+    <div class="cart-panel-body">
+        <table id="lista-carrito" class="cart-table">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cant.</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="cart-panel-footer">
+        <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
+        <button id="btn-comprar" class="btn-comprar">Finalizar compra</button>
+    </div>
+</aside>
+
+<!-- Fondo oscuro al abrir el carrito -->
+<div id="overlay" class="overlay"></div>
         </div>
+
+        
+
 
         <!-- Hero Section -->
         <div class="hero container">
@@ -72,54 +92,56 @@
                 </div>
             </div>
             <div class="hero-img">
-                <img src="./assets/img/header-img.png" alt="Promoción Dinomarket">
+                <img src="./assets/img/images.png" alt="Promoción Dinomarket">
             </div>
         </div>
     </header>
 
-    <!-- SECCIÓN DE OFERTAS -->
-    <section id="ofertas" class="offers container">
-        <h2 class="section-title">Ofertas destacadas</h2>
+<!-- SECCIÓN DE OFERTAS -->
+<section id="ofertas" class="offers container">
+  <h2 class="section-title">Ofertas destacadas</h2>
 
-        <div class="offer-grid">
-            <article class="offer-item">
-                <div class="offer-text">
-                    <h3>Descuento en productos frescos</h3>
-                    <a href="#">Ver más</a>
-                </div>
-                <img src="./assets/img/s1.png" alt="Oferta productos frescos">
-            </article>
+  <div class="carousel">
+    <button class="carousel-btn prev" aria-label="Oferta anterior">&#10094;</button>
 
-            <article class="offer-item">
-                <div class="offer-text">
-                    <h3>2x1 en snacks seleccionados</h3>
-                    <a href="#">Ver más</a>
-                </div>
-                <img src="./assets/img/s2.png" alt="Oferta snacks">
-            </article>
-
-            <article class="offer-item">
-                <div class="offer-text">
-                    <h3>Ofertas de temporada</h3>
-                    <a href="#">Ver más</a>
-                </div>
-                <img src="./assets/img/s3.png" alt="Oferta temporada">
-            </article>
+    <div class="carousel-track">
+      <article class="offer-item">
+        <img src="./assets/img/Alimentos-frescos.jpeg" alt="Oferta productos frescos">
+        <div class="offer-text">
+          <h3>Descuento en productos frescos</h3>
+          <a href="#">Ver más</a>
         </div>
-    </section>
+      </article>
+
+      <article class="offer-item">
+        <img src="https://atencion24.ar/wp-content/uploads/2023/12/74a811b8-65dd-4cba-8efe-370bf365e979.jpg" alt="Oferta snacks">
+        <div class="offer-text">
+          <h3>2x1 en snacks seleccionados</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </article>
+
+      <article class="offer-item">
+        <img src="./assets/img/images.png" alt="Oferta temporada">
+        <div class="offer-text">
+          <h3>Ofertas de temporada</h3>
+          <a href="#">Ver más</a>
+        </div>
+      </article>
+    </div>
+
+    <button class="carousel-btn next" aria-label="Siguiente oferta">&#10095;</button>
+  </div>
+
+  <div class="carousel-indicators"></div>
+</section>
+
 
     <!-- PRODUCTOS -->
-    <main id="productos" class="products container">
+    <main id="categorías" class="products container">
         <h2 class="section-title">Nuestros Productos</h2>
 
         <div class="product-grid" id="lista-productos">
-            <!-- Ejemplo de producto -->
-            <article class="product-card">
-                <img src="./assets/img/p1.png" alt="Producto 1">
-                <h3>Nombre del producto</h3>
-                <p class="price">$1500</p>
-                <button class="btn-agregar" data-id="1">Agregar al carrito</button>
-            </article>
             <!-- Aquí se cargan más productos dinámicamente -->
         </div>
     </main>
@@ -138,5 +160,6 @@
 
     <!-- Scripts -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/cargaproductos.js"></script>
 </body>
 </html>
