@@ -3,110 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinomarket 🦖</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Dinomarket - Minimarket online con productos frescos, ofertas increíbles y servicio de calidad.">
+    <meta name="keywords" content="minimarket, tienda online, productos, ofertas, supermercado, dinomarket">
+    <meta name="author" content="Dinomarket">
+    <title>Dinomarket | Tu minimarket de confianza</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/img/logo.png">
 </head>
 <body>
+
+    <!-- HEADER -->
     <header class="header">
-        <div class="container">
-            <a href="#">Dinomarket 🦖</a>
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="assets/img/logo.png" class="menu-icon" alt="Menu">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Dinomarket <img src="./assets/img/logo.png" alt=""></a>
+
+            <!-- Botón menú móvil -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <img src="assets/img/logo.png" alt="Abrir menú">
             </label>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Productos</a></li>   
-                    <li><a href="#">Contacto</a></li>
+
+            <!-- Navegación principal -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
-            <div>
-                <ul>
-                    <li class="submenu">
-                        <img id="carrito" src="assets/img/carritos.png" alt="carrito">
-                        <div id="carrito">
-                            <table id="lista-carrito" class="carrito">
-                                <thead>
-                                    <tr>
-                                        <th>Imagen</th>
-                                        <th>Nombre</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                            <a href="#" id="vaciar-carrito">Vaciar Carrito</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="header-content container">
-            <div class="header-text">
-                <span>Bienvenido a Dinomarket 🦖</span>
-                <h1>¡ofertas increíbles!</h1>
-                <p>
-                    Descubre productos únicos y descuentos especiales en nuestra tienda online.
-                </p>
-                <div class="buttons">
-                    <a href="#" class="btn-1">Información</a>
-                    <a href="#" class="btn btn-1">Leer más</a>
+            <!-- Carrito -->
+            <div class="cart-container">
+                <button class="cart-btn" aria-label="Ver carrito">
+                    <img src="assets/img/carritos.png" alt="Carrito de compras">
+                </button>
+                <div id="carrito" class="cart-dropdown">
+                    <table id="lista-carrito" class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
                 </div>
             </div>
-            <div class="header-img">
-                <img src="assets/img/header-img.png" alt="header">
         </div>
 
+        <!-- Hero Section -->
+        <div class="hero container">
+            <div class="hero-text">
+                <span>Bienvenido a Dinomarket</span>
+                <h1>¡Ofertas increíbles te esperan!</h1>
+                <p>Descubre productos únicos y descuentos especiales en nuestra tienda online.</p>
+                <div class="buttons">
+                    <a href="#servicios" class="btn btn-primary">Información</a>
+                    <a href="#productos" class="btn btn-secondary">Ver productos</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img src="./assets/img/header-img.png" alt="Promoción Dinomarket">
+            </div>
+        </div>
     </header>
 
-    <section class="oferts container">
+    <!-- SECCIÓN DE OFERTAS -->
+    <section id="ofertas" class="offers container">
+        <h2 class="section-title">Ofertas destacadas</h2>
 
-        <div class="ofert-1 b1">
-            <div class="ofert-txt">
-                <h3>Lorem impsum sit amet</h3>
-                <a href="#">leer mas</a>
-            </div>
-            <div class="ofert-img">
-                <img src="images/s1.png" alt="">
-            </div>
-        </div>  
-        <div class="ofert-1 b2">
-            <div class="ofert-txt">
-                <h3>Lorem impsum sit amet</h3>
-                <a href="#">leer mas</a>
-            </div>
-            <div class="ofert-img">
-                <img src="images/s2.png" alt="">
-            </div>
-        </div>  
-        <div class="ofert-1 b3">
-            <div class="ofert-txt">
-                <h3>Lorem impsum sit amet</h3>
-                <a href="#">leer mas</a>
-            </div>
-            <div class="ofert-img">
-                <img src="images/s3.png" alt="">
-            </div>
+        <div class="offer-grid">
+            <article class="offer-item">
+                <div class="offer-text">
+                    <h3>Descuento en productos frescos</h3>
+                    <a href="#">Ver más</a>
+                </div>
+                <img src="./assets/img/s1.png" alt="Oferta productos frescos">
+            </article>
+
+            <article class="offer-item">
+                <div class="offer-text">
+                    <h3>2x1 en snacks seleccionados</h3>
+                    <a href="#">Ver más</a>
+                </div>
+                <img src="./assets/img/s2.png" alt="Oferta snacks">
+            </article>
+
+            <article class="offer-item">
+                <div class="offer-text">
+                    <h3>Ofertas de temporada</h3>
+                    <a href="#">Ver más</a>
+                </div>
+                <img src="./assets/img/s3.png" alt="Oferta temporada">
+            </article>
         </div>
     </section>
 
-    <main class="products container">
+    <!-- PRODUCTOS -->
+    <main id="productos" class="products container">
+        <h2 class="section-title">Nuestros Productos</h2>
 
-        <h2>productos</h2>
-
-        <div class="box-container" id="lista-1">
-
-            <div class="box">
-                <img src="images/p1.png" alt="">
-            </div>
+        <div class="product-grid" id="lista-productos">
+            <!-- Ejemplo de producto -->
+            <article class="product-card">
+                <img src="./assets/img/p1.png" alt="Producto 1">
+                <h3>Nombre del producto</h3>
+                <p class="price">$1500</p>
+                <button class="btn-agregar" data-id="1">Agregar al carrito</button>
+            </article>
+            <!-- Aquí se cargan más productos dinámicamente -->
         </div>
     </main>
-    <section class=""></section>
-    <script src="assets/js/script.js"></script>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2025 Dinomarket 🦖 | Todos los derechos reservados.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">WhatsApp</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
