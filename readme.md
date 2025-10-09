@@ -1,0 +1,3 @@
+# DinoMarket
+
+**DinoMarket** es una web de demostración creada para mostrar mis habilidades técnicas en desarrollo web. Aquí podrás explorar diferentes funcionalidades y ejemplos de diseño que reflejan mi experiencia y conocimientos en programación y creación de sitios modernos. Esta página no representa un comercio real, sino que sirve como portafolio interactivo para destacar mis capacidades profesionales.
