@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Teléfono destino WhatsApp
     const telefono = "5492622445228"; // Cambiar por el número real
 
+    // ---------- FUNCIÓN PARA CONVERTIR CATEGORÍAS A CLASES SEGURAS ----------
+    const slugify = str => (str || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // quitar tildes
+        .replace(/\s+/g, "-")
+        .replace(/[^\w-]/g, "")
+        .replace(/--+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
     // ========== CARGAR PRODUCTOS DESDE JSON ==========
     async function cargarProductos() {
         try {
@@ -29,8 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const categorias = [...new Set(productos.map(p => p.categoria))];
 
         categorias.forEach(categoria => {
+            const slugCategoria = slugify(categoria);
+
             const section = document.createElement("section");
-            section.classList.add("categoria-section");
+            section.classList.add("categoria-section", slugCategoria);
+            section.id = slugCategoria; // importante para scroll desde buscador
 
             const titulo = document.createElement("h3");
             titulo.classList.add("categoria-titulo");
@@ -43,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             productosCategoria.forEach(producto => {
                 const card = document.createElement("article");
-                card.classList.add("product-card");
+                card.classList.add("product-card", slugCategoria); // 👈 clase de categoría
+
                 card.innerHTML = `
                     <img src="${producto.img}" alt="${producto.nombre}">
                     <h3>${producto.nombre}</h3>
@@ -98,16 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
             carritoTabla.appendChild(fila);
         });
 
-        // Eventos eliminar
         document.querySelectorAll(".btn-eliminar").forEach(btn =>
             btn.addEventListener("click", eliminarDelCarrito)
         );
 
-        // Botón comprar dinámico
-       // Asignar evento al botón "Finalizar compra"
         const btnComprar = document.getElementById("btn-comprar");
-        btnComprar.addEventListener("click", enviarWhatsApp);
-}
+        if (btnComprar) btnComprar.addEventListener("click", enviarWhatsApp);
+    }
 
     // ========== ELIMINAR PRODUCTO ==========
     function eliminarDelCarrito(e) {
@@ -130,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         let mensaje = "🦖 *Pedido Dinomarket* 🦖%0A%0A";
-
         carrito.forEach(item => {
             mensaje += `• ${item.nombre} x${item.cantidad} = $${(item.precio * item.cantidad).toFixed(2)}%0A`;
         });

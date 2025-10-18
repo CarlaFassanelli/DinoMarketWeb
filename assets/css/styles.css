@@ -882,3 +882,9 @@ ul {
     padding: 0.6rem 0.9rem;
   }
 }
+
+.resaltado {
+  border: 3px solid #ff9900;
+  box-shadow: 0 0 10px #ff9900;
+  transition: all 0.3s ease-in-out;
+}
