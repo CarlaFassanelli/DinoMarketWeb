@@ -656,3 +656,229 @@ ul {
 .overlay.visible {
   display: block;
 }
+
+/* VARIABLES BASE */
+:root {
+  --primary-color: #D96523;
+  --secondary-color: #D96523;
+  --accent-color: #D95323;
+  --text-color: #0D0D0D;
+  --background-color: #F2D4AE;
+  --gray-light: #f4f4f4;
+  --gray-dark: #555;
+}
+
+/* NAV PRINCIPAL */
+.nav {
+
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.btn-categorias {
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-categorias:hover {
+  background: var(--accent-color);
+}
+
+/* MENU WRAPPER */
+.menu-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 220px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-categorias {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.menu-categorias li {
+  border-bottom: 1px solid #eee;
+}
+
+.menu-categorias li:last-child {
+  border-bottom: none;
+}
+
+.menu-categorias a {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.menu-categorias a:hover {
+  background-color: var(--gray-light);
+}
+
+/* BOTÓN DE CIERRE (solo visible en móvil) */
+.btn-cerrar {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 80%;
+    max-width: 320px;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    padding-top: 4rem;
+  }
+
+  .menu-wrapper.show {
+    left: 0;
+  }
+
+  .btn-cerrar {
+    display: block;
+  }
+
+  .menu-categorias a {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* OVERLAY para móviles */
+.overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 900;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+}
+
+
+/* Estilos para el buscador "buscadorFloat" (no es flotante) */
+.buscadorFloat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(13, 13, 13, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+}
+
+/* Input */
+.buscadorFloat .buscador {
+  flex: 1 1 220px;
+  min-width: 120px;
+  background: transparent;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+/* Placeholder más tenue */
+.buscadorFloat .buscador::placeholder {
+  color: rgba(13,13,13,0.45);
+  font-weight: 500;
+}
+
+/* Focus accesible */
+.buscadorFloat .buscador:focus {
+  box-shadow: 0 0 0 4px rgba(217, 101, 35, 0.12);
+  border-radius: 999px;
+}
+
+/* Botón de búsqueda */
+.buscadorFloat .btn-buscar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.2s ease;
+  line-height: 1;
+}
+
+/* Hover / active */
+.buscadorFloat .btn-buscar:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.buscadorFloat .btn-buscar:active {
+  transform: translateY(0);
+}
+
+/* Tamaño completo en móvil */
+@media (max-width: 600px) {
+  .buscadorFloat {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .buscadorFloat .buscador {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .buscadorFloat .btn-buscar {
+    padding: 0.6rem 0.9rem;
+  }
+}

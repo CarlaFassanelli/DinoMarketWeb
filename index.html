@@ -1,165 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dinomarket - Minimarket online con productos frescos, ofertas increíbles y servicio de calidad.">
-    <meta name="keywords" content="minimarket, tienda online, productos, ofertas, supermercado, dinomarket">
-    <meta name="author" content="Dinomarket">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dinomarket - Minimarket online con productos frescos, ofertas increíbles y servicio de calidad."
+    />
+    <meta
+      name="keywords"
+      content="minimarket, tienda online, productos, ofertas, supermercado, dinomarket"
+    />
+    <meta name="author" content="Dinomarket" />
     <title>Dinomarket | Tu minimarket de confianza</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/img/logo.png">
-</head>
-<body>
-
+    <link rel="icon" type="image/png" href="./assets/img/logo.png" />
+  </head>
+  <body>
     <!-- HEADER -->
     <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">Dinomarket <img src="./assets/img/logo.png" alt=""></a>
+      <div class="container header-container">
+        <a href="index.html" class="logo"
+          >Dinomarket <img src="./assets/img/logo.png" alt=""
+        /></a>
 
-            <!-- Botón menú móvil -->
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">
-                <img src="assets/img/logo.png" alt="Abrir menú">
-            </label>
+        <!-- Botón menú móvil -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+          <img src="assets/img/logo.png" alt="Abrir menú" />
+        </label>
 
-            <!-- Navegación principal -->
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#categorías">Categorías</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+        <!-- Navegación principal -->
+        <!-- Navegación principal -->
+        <nav class="nav container" aria-label="Navegación principal">
+          <button
+            id="btn-categorias"
+            class="btn-categorias"
+            aria-expanded="false"
+            aria-controls="menu-categorias"
+          >
+            ☰ Categorías
+          </button>
 
-           <!-- Carrito -->
-<div class="cart-container">
-    <button class="cart-btn" id="abrir-carrito" aria-label="Ver carrito">
-        <img src="assets/img/carritos.png" alt="Carrito de compras">
-    </button>
-</div>
+          <div class="buscadorFloat">
+            <input
+              type="text"
+              id="buscador"
+              class="buscador"
+              placeholder="Buscar productos..."
+              aria-label="Buscar productos"
+            />
+            <button id="btn-buscar" class="btn-buscar" aria-label="Buscar">
+              🔍
+            </button>
+          </div>
 
-<!-- PANEL LATERAL DEL CARRITO -->
-<aside id="panel-carrito" class="cart-panel">
-    <div class="cart-panel-header">
-        <h2>Tu carrito 🛒</h2>
-        <button id="cerrar-carrito" class="cerrar-carrito">✖</button>
-    </div>
+          <div id="menu-wrapper" class="menu-wrapper" hidden>
+            <button id="btn-cerrar" class="btn-cerrar" aria-label="Cerrar menú">
+              ✕
+            </button>
 
-    <div class="cart-panel-body">
-        <table id="lista-carrito" class="cart-table">
-            <thead>
+            <ul id="menu-categorias" class="menu-categorias">
+              <li><a href="#almacen">Almacén</a></li>
+              <li><a href="#bebidas">Bebidas</a></li>
+              <li><a href="#carnes">Carnes</a></li>
+              <li><a href="#frutas-y-verduras">Frutas y Verduras</a></li>
+              <li><a href="#lacteos">Lácteos</a></li>
+              <li><a href="#perfumeria">Perfumería</a></li>
+              <li><a href="#limpieza">Limpieza</a></li>
+              <li><a href="#quesos-y-fiambres">Quesos y Fiambres</a></li>
+              <li><a href="#congelados">Congelados</a></li>
+              <li><a href="#panaderia">Panadería</a></li>
+              <li><a href="#pet-shop">Pet Shop</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Carrito -->
+        <div class="cart-container">
+          <button class="cart-btn" id="abrir-carrito" aria-label="Ver carrito">
+            <img src="assets/img/carritos.png" alt="Carrito de compras" />
+          </button>
+        </div>
+
+        <!-- PANEL LATERAL DEL CARRITO -->
+        <aside id="panel-carrito" class="cart-panel">
+          <div class="cart-panel-header">
+            <h2>Tu carrito 🛒</h2>
+            <button id="cerrar-carrito" class="cerrar-carrito">✖</button>
+          </div>
+
+          <div class="cart-panel-body">
+            <table id="lista-carrito" class="cart-table">
+              <thead>
                 <tr>
-                    <th>Imagen</th>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Cant.</th>
-                    <th></th>
+                  <th>Imagen</th>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Cant.</th>
+                  <th></th>
                 </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
 
-    <div class="cart-panel-footer">
-        <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
-        <button id="btn-comprar" class="btn-comprar">Finalizar compra</button>
-    </div>
-</aside>
+          <div class="cart-panel-footer">
+            <button id="vaciar-carrito" class="btn-vaciar">
+              Vaciar carrito
+            </button>
+            <button id="btn-comprar" class="btn-comprar">
+              Finalizar compra
+            </button>
+          </div>
+        </aside>
 
-<!-- Fondo oscuro al abrir el carrito -->
-<div id="overlay" class="overlay"></div>
+        <!-- Fondo oscuro al abrir el carrito -->
+        <div id="overlay" class="overlay"></div>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="hero container">
+        <div class="hero-text">
+          <span>Bienvenido a Dinomarket</span>
+          <h1>¡Ofertas increíbles te esperan!</h1>
+          <p>
+            Descubre productos únicos y descuentos especiales en nuestra tienda
+            online.
+          </p>
+          <div class="buttons">
+            <a href="#servicios" class="btn btn-primary">Información</a>
+            <a href="#productos" class="btn btn-secondary">Ver productos</a>
+          </div>
         </div>
-
-        
-
-
-        <!-- Hero Section -->
-        <div class="hero container">
-            <div class="hero-text">
-                <span>Bienvenido a Dinomarket</span>
-                <h1>¡Ofertas increíbles te esperan!</h1>
-                <p>Descubre productos únicos y descuentos especiales en nuestra tienda online.</p>
-                <div class="buttons">
-                    <a href="#servicios" class="btn btn-primary">Información</a>
-                    <a href="#productos" class="btn btn-secondary">Ver productos</a>
-                </div>
-            </div>
-            <div class="hero-img">
-                <img src="./assets/img/images.png" alt="Promoción Dinomarket">
-            </div>
+        <div class="hero-img">
+          <img src="./assets/img/images.png" alt="Promoción Dinomarket" />
         </div>
+      </div>
     </header>
 
-<!-- SECCIÓN DE OFERTAS -->
-<section id="ofertas" class="offers container">
-  <h2 class="section-title">Ofertas destacadas</h2>
+    <!-- SECCIÓN DE OFERTAS -->
+    <section id="ofertas" class="offers container">
+      <h2 class="section-title">Ofertas destacadas</h2>
 
-  <div class="carousel">
-    <button class="carousel-btn prev" aria-label="Oferta anterior">&#10094;</button>
+      <div class="carousel">
+        <button class="carousel-btn prev" aria-label="Oferta anterior">
+          &#10094;
+        </button>
 
-    <div class="carousel-track">
-      <article class="offer-item">
-        <img src="./assets/img/Alimentos-frescos.jpeg" alt="Oferta productos frescos">
-        <div class="offer-text">
-          <h3>Descuento en productos frescos</h3>
-          <a href="#">Ver más</a>
+        <div class="carousel-track">
+          <article class="offer-item">
+            <img
+              src="./assets/img/Alimentos-frescos.jpeg"
+              alt="Oferta productos frescos"
+            />
+            <div class="offer-text">
+              <h3>Descuento en productos frescos</h3>
+              <a href="#">Ver más</a>
+            </div>
+          </article>
+
+          <article class="offer-item">
+            <img
+              src="https://atencion24.ar/wp-content/uploads/2023/12/74a811b8-65dd-4cba-8efe-370bf365e979.jpg"
+              alt="Oferta snacks"
+            />
+            <div class="offer-text">
+              <h3>2x1 en snacks seleccionados</h3>
+              <a href="#">Ver más</a>
+            </div>
+          </article>
+
+          <article class="offer-item">
+            <img src="./assets/img/images.png" alt="Oferta temporada" />
+            <div class="offer-text">
+              <h3>Ofertas de temporada</h3>
+              <a href="#">Ver más</a>
+            </div>
+          </article>
         </div>
-      </article>
 
-      <article class="offer-item">
-        <img src="https://atencion24.ar/wp-content/uploads/2023/12/74a811b8-65dd-4cba-8efe-370bf365e979.jpg" alt="Oferta snacks">
-        <div class="offer-text">
-          <h3>2x1 en snacks seleccionados</h3>
-          <a href="#">Ver más</a>
-        </div>
-      </article>
+        <button class="carousel-btn next" aria-label="Siguiente oferta">
+          &#10095;
+        </button>
+      </div>
 
-      <article class="offer-item">
-        <img src="./assets/img/images.png" alt="Oferta temporada">
-        <div class="offer-text">
-          <h3>Ofertas de temporada</h3>
-          <a href="#">Ver más</a>
-        </div>
-      </article>
-    </div>
-
-    <button class="carousel-btn next" aria-label="Siguiente oferta">&#10095;</button>
-  </div>
-
-  <div class="carousel-indicators"></div>
-</section>
-
+      <div class="carousel-indicators"></div>
+    </section>
 
     <!-- PRODUCTOS -->
     <main id="categorías" class="products container">
-        <h2 class="section-title">Nuestros Productos</h2>
+      <h2 class="section-title">Nuestros Productos</h2>
 
-        <div class="product-grid" id="lista-productos">
-            <!-- Aquí se cargan más productos dinámicamente -->
-        </div>
+      <div id="lista-productos">
+        <!-- Aquí se cargan más productos dinámicamente -->
+      </div>
     </main>
 
     <!-- FOOTER -->
     <footer id="contacto" class="footer">
-        <div class="container footer-container">
-            <p>&copy; 2025 Dinomarket 🦖 | Todos los derechos reservados.</p>
-            <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">WhatsApp</a></li>
-            </ul>
-        </div>
+      <div class="container footer-container">
+        <p>&copy; 2025 Dinomarket 🦖 | Todos los derechos reservados.</p>
+        <ul class="social-links">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/cargaproductos.js"></script>
-</body>
+  </body>
 </html>

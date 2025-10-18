@@ -1,12 +1,21 @@
 [
     {
         "id": 1,
-        "nombre": "Leche Entera",
-        "img": "img/leche_entera.jpg",
-        "descripcion": "Leche de vaca fresca y pasteurizada, envase de 1 litro.",
+        "nombre": "Yerba Verdeflor 1kg",
+        "img": "./assets/img/Verdeflor hierbas serranas 1kg.jpg",
+        "descripcion": "Hierbas Serranas",
         "precio": 1.55,
         "stock": 120,
-        "categoria": "Lácteos"
+        "categoria": "Almacen"
+    },
+        {
+        "id": 1,
+        "nombre": "Yerba Verdeflor 1kg",
+        "img": "./assets/img/Verdeflor hierbas serranas 1kg.jpg",
+        "descripcion": "Hierbas Serranas",
+        "precio": 1.55,
+        "stock": 120,
+        "categoria": "Almacen"
     },
     {
         "id": 2,
